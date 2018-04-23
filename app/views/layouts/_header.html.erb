@@ -1,13 +1,24 @@
-<header class="navbar navbar-fixed-top navbar-inverse">
-  <div class="container">
-    <%= link_to "Incbators", '#', id: "logo" %>
-    <nav>
-      <ul class="nav navbar-nav navbar-right">
-        <li><%= link_to "Home",   '#' %></li>
-        <li><%= link_to "Help",   '#' %></li>
-        <li><%= link_to "Sign in", '#' %></li>
-        <li><%= link_to "Sign up", '#' %></li>
-      </ul>
-    </nav>
+<nav class="navbar navbar-static-top navbar-inverse">
+  <div class="navbar-header">
+    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#headmenu">
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </button>
+    <%= link_to 'Incubators', '/', id: 'logo', class: 'navbar-brand' %>
   </div>
-</header>
+
+  <div id="headmenu" class="collapse navbar-collapse">
+    <ul class="nav navbar-nav navbar-right">
+      <li><%= link_to "Home",   '#' %></li>
+      <li><%= link_to "About",   '#' %></li>
+      <% if user_signed_in? %>
+        <li><%= link_to "Sign out", destroy_user_session_path, method: :delete %></li>
+        <li><%= link_to "MyPage", '#' %></li>
+      <% else %>
+        <li><%= link_to "Sign in", new_user_session_path %></li>
+        <li><%= link_to "Sign up", new_user_registration_path %></li>
+      <% end %>
+    </ul>
+  </div>
+</nav>
