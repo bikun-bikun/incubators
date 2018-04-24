@@ -5,6 +5,7 @@ class CreateProjects < ActiveRecord::Migration[5.2]
       t.string :url
       t.string :identifier
       t.text :description
+      t.references :user , foreign_key: true
 
       t.timestamps
     end
