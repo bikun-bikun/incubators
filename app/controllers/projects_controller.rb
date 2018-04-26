@@ -28,10 +28,6 @@ class ProjectsController < ApplicationController
     # @project = Project.new(project_params)
     @project = current_user.projects.build(project_params)
 
-    logger.debug('--------------insert log start--------------')
-    logger.debug(@project)
-    logger.debug('--------------insert log end----------------')
-
     respond_to do |format|
       if @project.save
         format.html { redirect_to @project, notice: 'Project was successfully created.' }
