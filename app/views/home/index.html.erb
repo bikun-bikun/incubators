@@ -7,9 +7,11 @@
     <% @projects.each do |project| %>
         <div class="item">
             <div class="name">
-                <h2><%= link_to project.name, project %></h2>
+                <%= link_to project.name, project %>
             </div>
+            <div class="created-at"><%= project.created_at.strftime('%Y/%m/%d') %>に作成されました。</div>
             <div class="description"><%= project.description %></div>
         </div>
+        <hr class="item-line">
     <% end %>
 <% end %>
