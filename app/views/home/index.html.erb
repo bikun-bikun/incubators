@@ -1,9 +1,8 @@
 <% if user_signed_in? %>
-<h1>My Projects</h1>
-
-<%= link_to 'New Project', new_project_path %>
-<br>
-<br>
+    <div class="contante_header">
+        <h1>My Projects</h1>
+        <%= link_to 'New Project', new_project_path %>
+    </div>
     <% @projects.each do |project| %>
         <div class="item">
             <div class="item-header">
