@@ -1,17 +1,36 @@
-// Place all the styles related to the home controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
 
-.name{
-    font-size: 32px;
-    float: left;
+
+.item-header{
+    display: table;
 }
 
+.name{
+    //font-size: 32px;
+    display: table-cell;
+    //min-height: 32px;
+    
+    a {
+        font-size: 32px;
+    }
+}
+
+
 .created-at{
+    display: table-cell;
     font-size: 12px;
     //float: right;
+}
+
+.description{
+    //float: left;
 }
 .item-line{
     margin-top: 3px;
     margin-bottom: 10px;
+}
+
+.clearfix:after{
+	content: "";
+	clear: both;
+	display: block;
 }
